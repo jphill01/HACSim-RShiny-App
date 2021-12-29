@@ -8,7 +8,7 @@ Users can access the app in three ways:
 
 - Through directly downloading the HACSim-RShiny-App GitHub repository from GitHub and running it locally on their operating system; or,
 - Through directly accessing the R Shiny server (https://hacsim.shinyapps.io/hacsim-rshiny-app/); or,
-- Through directly launching the app from the HACSim R package itself via the {\tt launchApp()} function.
+- Through directly launching the app from the HACSim R package itself via the `launchApp()' function.
 
 **Note**: Depending on the magnitude of inputted parameters, users may wish to employ the HACSim R package directly through R, especially for long simulation runtimes
 
