@@ -119,7 +119,7 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                          tabPanel("More Information",style = "padding-top:5px;",tags$blockquote(h3("More Information"), 
                                                                                                 p("Are you interested in doing even more with HACSim? Consider downloading the R package! See the HACSim", 
                                                                                                   tags$a(href = "https://cran.r-project.org/web/packages/HACSim/index.html", "CRAN",target = "_blank"),
-                                                                                                  "page for more details. You can also check out the HACSim R package repository on", 
+                                                                                                  "page for more details. You can also check out the development version of the HACSim R package on", 
                                                                                                   tags$a(href = "https://github.com/jphill01/HACSim.R", "GitHub.", target = "_blank")),style="font-size:120%; color:black;
                   ")),
                          tabPanel(
