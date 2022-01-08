@@ -23,6 +23,14 @@ server <- function(input, output) {
     conf.level <- input$conf.level
     progress <- input$progress_bar
     
+    if (is.na(input$num.iters)) {
+      num.iters <- as.null(input$num.iters)
+    }
+    
+    if (input$num.iters == 1) {
+      num.iters <- input$num.iters
+    }
+    
     # find if simulation type is real or hypothetical
     if(input$switch == TRUE){  # Real
       
@@ -87,7 +95,7 @@ server <- function(input, output) {
           HACSObj <- HACHypothetical(N = N,Hstar = Hstar,probs = probs,perms = permutations, p = p, 
                                      conf.level = conf.level,
                                      subsample = FALSE, prop = NULL,
-                                     progress = TRUE, num.iters = NULL, filename = NULL)
+                                     progress = TRUE, num.iters = num.iters, filename = NULL)
           values[["log"]] <- capture.output(data <- HAC.simrep(HACSObj))
         })
         
@@ -128,7 +136,7 @@ server <- function(input, output) {
           # creating a HACSObj object by running HACReal()
           HACSObj <- HACReal(perms = permutations, p = p ,conf.level = 0.95,
                              subsample = subsample, prop = prop, progress = progress,
-                             num.iters = NULL, 
+                             num.iters = num.iters, 
                              filename = NULL)
           values[["log"]] <- capture.output(data <- HAC.simrep(HACSObj))
           
@@ -182,7 +190,7 @@ server <- function(input, output) {
         HACSObj <- HACHypothetical(N = N,Hstar = Hstar,probs = probs,perms = permutations, p = p, 
                                    conf.level = conf.level,
                                    subsample = subsample, prop = prop,
-                                   progress = progress, num.iters = NULL, filename = NULL)
+                                   progress = progress, num.iters = num.iters, filename = NULL)
         values[["log"]] <- capture.output(data <- HAC.simrep(HACSObj))
         
       })
@@ -210,6 +218,9 @@ server <- function(input, output) {
   })
   observeEvent(input$reset, {
     reset("conf.level")
+  })
+  observeEvent(input$reset, {
+    reset("num.iters")
   })
   observeEvent(input$reset, {
     reset("switch")

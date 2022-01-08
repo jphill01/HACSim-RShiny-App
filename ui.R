@@ -193,6 +193,13 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                 min = 0.01,
                                 max = 0.99,
                                 step = 0.01),
+                   
+                   numericInput(inputId = "num.iters",
+                                label = "Number of iterations to run (num.iters)",
+                                value = NA,
+                                min = 1,
+                                max = 1),
+                   
                    switchInput(
                      label = "Progress",
                      inputId = "progress_bar",
