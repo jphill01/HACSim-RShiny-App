@@ -25,11 +25,10 @@ server <- function(input, output) {
     
     if (is.na(input$num.iters)) {
       num.iters <- as.null(input$num.iters)
-    }
-    
-    if (input$num.iters == 1) {
+    } else {
+      (input$num.iters == 1)
       num.iters <- input$num.iters
-    }
+      }
     
     # find if simulation type is real or hypothetical
     if(input$switch == TRUE){  # Real
