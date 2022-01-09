@@ -146,12 +146,14 @@ server <- function(input, output) {
         })
         
         output$text <- renderPrint({
+          if(global$refresh) return()
           x <- values[["log"]]
           toBeReturned <- str_replace_all(x, '\\s+' , " ")
           return(print(noquote(toBeReturned)))
         })
         
         output$pdfview <- renderUI({
+          if(global$refresh) return()
           path <- "www/Rplots.pdf"
           pdf(file=path,width=12, height=5,onefile=T,title = "HACSim Graphics Output",paper = "a4r")  
           result()
@@ -188,12 +190,14 @@ server <- function(input, output) {
           
         })
         output$text <- renderPrint({
+          if(global$refresh) return()
           x <- values[["log"]]
           toBeReturned <- str_replace_all(x, '\\s+' , " ")
           return(print(noquote(toBeReturned)))
         })
         
         output$pdfview <- renderUI({
+          if(global$refresh) return()
           path <- "www/Rplots.pdf"
           pdf(file=path,width=12, height=5,onefile=T,title = "HACSim Graphics Output",paper = "a4r")  
           result()
@@ -241,12 +245,14 @@ server <- function(input, output) {
         
       })
       output$text <- renderPrint({
+        if(global$refresh) return()
         x <- values[["log"]]
         toBeReturned <- str_replace_all(x, '\\s+' , " ")
         return(print(noquote(toBeReturned)))
       })
       
       output$pdfview <- renderUI({
+        if(global$refresh) return()
         path <- "www/Rplots.pdf"
         pdf(file=path,width=12, height=5,onefile=T,title = "HACSim Graphics Output",paper = "a4r")  
         result()
@@ -296,4 +302,15 @@ server <- function(input, output) {
     reset("prop_2")
   })
 
+  global <- reactiveValues(refresh = FALSE)
+  
+  observe({
+    if(input$refresh) isolate(global$refresh <- TRUE)
+  })
+  
+  observe({
+    if(input$run) isolate(global$refresh <- FALSE)
+  })
+  
+  
 }
