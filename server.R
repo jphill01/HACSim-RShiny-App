@@ -18,7 +18,7 @@ server <- function(input, output) {
   
   observeEvent(input$run, {
     # Main interface variables
-    permutations <- input$perms
+    perms <- input$perms
     p <- input$p
     conf.level <- input$conf.level
     progress <- input$progress_bar
@@ -26,14 +26,13 @@ server <- function(input, output) {
     if (is.na(input$num.iters)) {
       num.iters <- as.null(input$num.iters)
     } else {
-      (input$num.iters == 1)
       num.iters <- input$num.iters
       }
     
     # find if simulation type is real or hypothetical
     if(input$switch == TRUE){  # Real
       
-      if(input$Id015 == TRUE){ # Pre loaded example
+      if(input$Id015 == TRUE){ # Preloaded example
         
         values <- reactiveValues()
         N <- input$N_load_a
@@ -48,36 +47,84 @@ server <- function(input, output) {
           x <- input$probs_load_a
           split_str <- strsplit(x, ",")
           probs <- as.numeric(unlist(split_str))
+          subsample <- input$subsampleseqs
+          prop = input$prop
+          evaluate <- TRUE
+          if(subsample == TRUE && is.na(prop) == TRUE){
+            evaluate <- FALSE
+          }else if(subsample == TRUE && (prop < 0 || prop > 1)){
+            evaluate <- FALSE
+          }
         }else if(input$Id008 == 'Pea aphid (Acyrthosiphon pisum)'){
           N <- input$N_load_b
           Hstar <- input$Hstar_load_b
           x <- input$probs_load_b
           split_str <- strsplit(x, ",")
           probs <- as.numeric(unlist(split_str))
+          subsample <- input$subsampleseqs
+          prop = input$prop
+          evaluate <- TRUE
+          if(subsample == TRUE && is.na(prop) == TRUE){
+            evaluate <- FALSE
+          }else if(subsample == TRUE && (prop < 0 || prop > 1)){
+            evaluate <- FALSE
+          }
         }else if(input$Id008 == 'Common mosquito (Culex pipiens)'){
           N <- input$N_load_c
           Hstar <- input$Hstar_load_c
           x <- input$probs_load_c
           split_str <- strsplit(x, ",")
           probs <- as.numeric(unlist(split_str))
+          subsample <- input$subsampleseqs
+          prop = input$prop
+          evaluate <- TRUE
+          if(subsample == TRUE && is.na(prop) == TRUE){
+            evaluate <- FALSE
+          }else if(subsample == TRUE && (prop < 0 || prop > 1)){
+            evaluate <- FALSE
+          }
         }else if(input$Id008 == 'Deer tick (Ixodes scapularis)'){
           N <- input$N_load_d
           Hstar <- input$Hstar_load_d
           x <- input$probs_load_d
           split_str <- strsplit(x, ",")
           probs <- as.numeric(unlist(split_str))
+          subsample <- input$subsampleseqs
+          prop = input$prop
+          evaluate <- TRUE
+          if(subsample == TRUE && is.na(prop) == TRUE){
+            evaluate <- FALSE
+          }else if(subsample == TRUE && (prop < 0 || prop > 1)){
+            evaluate <- FALSE
+          }
         }else if(input$Id008 == 'Gypsy moth (Lymantria dispar)'){
           N <- input$N_load_e
           Hstar <- input$Hstar_load_e
           x <- input$probs_load_e
           split_str <- strsplit(x, ",")
           probs <- as.numeric(unlist(split_str))
+          subsample <- input$subsampleseqs
+          prop = input$prop
+          evaluate <- TRUE
+          if(subsample == TRUE && is.na(prop) == TRUE){
+            evaluate <- FALSE
+          }else if(subsample == TRUE && (prop < 0 || prop > 1)){
+            evaluate <- FALSE
+          }
         }else if(input$Id008 == 'Scalloped hammerhead shark (Sphyrna lewini)'){
           N <- input$N_load_f
           Hstar <- input$Hstar_load_f
           x <- input$probs_load_f
           split_str <- strsplit(x, ",")
           probs <- as.numeric(unlist(split_str))
+          subsample <- input$subsampleseqs
+          prop = input$prop
+          evaluate <- TRUE
+          if(subsample == TRUE && is.na(prop) == TRUE){
+            evaluate <- FALSE
+          }else if(subsample == TRUE && (prop < 0 || prop > 1)){
+            evaluate <- FALSE
+          }
         }
         
         result <- metaRender(renderPrint,{
@@ -87,11 +134,11 @@ server <- function(input, output) {
             need(Hstar > 1,'H* must be greater than 1'),
             need(isTRUE(all.equal(1, sum(probs), tolerance = .Machine$double.eps^0.25)),'probs must sum to 1'),
             need(length(probs) == Hstar,'probs must have Hstar elements'),
-            need((permutations > 1),'perms must be greater than 1'),
+            need((perms > 1),'perms must be greater than 1'),
             need((p > 0) && (p <= 1),'p must be greater than 0 and less than or equal to 1'),
             need((conf.level > 0) && (conf.level < 1),'conf.level must be between 0 and 1.')
           )
-          HACSObj <- HACHypothetical(N = N,Hstar = Hstar,probs = probs,perms = permutations, p = p, 
+          HACSObj <- HACHypothetical(N = N,Hstar = Hstar,probs = probs,perms = perms, p = p, 
                                      conf.level = conf.level,
                                      subsample = FALSE, prop = NULL,
                                      progress = TRUE, num.iters = num.iters, filename = NULL)
@@ -126,14 +173,14 @@ server <- function(input, output) {
         
         result <- metaRender(renderPrint,{
           validate(
-            need((permutations > 1),'perms must be greater than 1'),
+            need((perms > 1),'perms must be greater than 1'),
             need((p > 0) && (p <= 1),'p must be greater than 0 and less than or equal to 1'),
             need((conf.level > 0) && (conf.level < 1),'conf.level must be between 0 and 1.'),
             need(evaluate == TRUE,'Proportion of DNA sequences to subsample is either missing, non-numeric, less than zero or greater than one.
                User must fill in positive numeric value for subsampling between 0 and 1.')
           )
           # creating a HACSObj object by running HACReal()
-          HACSObj <- HACReal(perms = permutations, p = p ,conf.level = 0.95,
+          HACSObj <- HACReal(perms = perms, p = p ,conf.level = 0.95,
                              subsample = subsample, prop = prop, progress = progress,
                              num.iters = num.iters, 
                              filename = NULL)
@@ -180,13 +227,13 @@ server <- function(input, output) {
           need(Hstar > 1,'H* must be greater than 1'),
           need(isTRUE(all.equal(1, sum(probs), tolerance = .Machine$double.eps^0.25)),'probs must sum to 1'),
           need(length(probs) == Hstar,'probs must have Hstar elements'),
-          need((permutations > 1),'perms must be greater than 1'),
+          need((perms > 1),'perms must be greater than 1'),
           need((p > 0) && (p <= 1),'p must be greater than 0 and less than or equal to 1'),
           need((conf.level > 0) && (conf.level < 1),'conf.level must be between 0 and 1.'),
           need(evaluate == TRUE,'Proportion of DNA sequences to subsample is either missing, non-numeric, less than zero or greater than one.
                User must fill in positive numeric value for subsampling between 0 and 1.')
         )
-        HACSObj <- HACHypothetical(N = N,Hstar = Hstar,probs = probs,perms = permutations, p = p, 
+        HACSObj <- HACHypothetical(N = N,Hstar = Hstar,probs = probs,perms = perms, p = p, 
                                    conf.level = conf.level,
                                    subsample = subsample, prop = prop,
                                    progress = progress, num.iters = num.iters, filename = NULL)
@@ -248,4 +295,5 @@ server <- function(input, output) {
   observeEvent(input$reset, {
     reset("prop_2")
   })
+
 }

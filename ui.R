@@ -435,8 +435,16 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                      style = "jelly",
                      size ="sm",
                      block = FALSE
-                   )
-                   ,helpText(strong("Disclaimer", .noWS = c("after")),": Simulation may take time to run depending on the size of the inputted dataset and parameters."))
+                   ),
+                   actionBttn(
+                     inputId = "refresh",
+                     label = "Refresh",
+                     color = "success",
+                     style = "jelly",
+                     size ="sm",
+                     block = FALSE
+                   ),
+                   helpText(strong("Disclaimer", .noWS = c("after")),": Simulation may take time to run depending on the size of the inputted dataset and parameters."))
         ),
         
         sidebarPanel(
