@@ -444,14 +444,7 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                      size ="sm",
                      block = FALSE
                    ),
-                   actionBttn(
-                     inputId = "reset",
-                     label = "Reset",
-                     color = "success",
-                     style = "jelly",
-                     size ="sm",
-                     block = FALSE
-                   ),
+                  
                    helpText(strong("Disclaimer", .noWS = c("after")),": Simulation may take time to run depending on the size of the inputted dataset and parameters."))
         ),
         
