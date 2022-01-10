@@ -51,7 +51,9 @@
               </li>
               <li>
                 <p class="p1">Enter all the required arguments in the main interface and sub interface.</p>
-                <small class="p1">First click on the main interface and fill in the desired number of permutations, proportion of haplotypes to recover, as well as the desired confidence level for calculations and plotting. Next, go to the sub interface and select either real or hypothetical species simulation type.</small>
+                <small class="p1">First, click on the main interface and fill in the desired number of permutations, proportion of haplotypes to recover, as well as the desired confidence level for calculations and plotting. By default, all iterations are run. However, users can choose to run the first iteration only. This is useful when simulations take a long time to finish, or when a user is interested only in assessing genetic diversity present in the current dataset.<small></p>
+                  
+                </small class="p1"> Next, go to the sub interface and toggle either real or hypothetical species simulation type. Users can also choose from several preloaded taxon datasets from a drop-down menu. </small>
                 <div class="row">
                 <div class="column" style="float: left;width: 50%;padding: 5px;">
                   <img src="main_interface.png" alt="Main interface" class="responsive" /img>
@@ -90,7 +92,7 @@
               Depending on the size of input parameters to the simulation, the algorithm in its current form, can be quite slow to reach full convergence. For a species with equal haplotype frequency, saturation of the haplotype accumulation curve is (usually) reached very rapidly (one exception occurs when N = Hstar). On the other hand, for a species with many rare haplotypes, the generated haplotype accumulation curve will take signficantly longer to reach an asymptote since rare haplotypes will not be sampled as frequently as dominant ones.
             </p>
             <p class="p1">
-              Altered input parameters can be set back to their default values by clicking the 'Reset' button found in the main interface. 
+              Altered input parameters can be set back to their default values by clicking the 'Reset' button found in the main interface. In addition, the 'Refresh' button within the Sub interface can be used to clear the Results Panel between simulations.
             </p> 
           </div>
         </div>.
