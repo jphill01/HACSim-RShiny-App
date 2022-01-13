@@ -186,7 +186,7 @@ server <- function(input, output) {
                User must fill in positive numeric value for subsampling between 0 and 1.')
           )
           # creating a HACSObj object by running HACReal()
-          HACSObj <- HACReal(perms = perms, p = p ,conf.level = 0.95,
+          HACSObj <- HACReal(perms = perms, p = p ,conf.level = conf.level,
                              subsample = subsample, prop = prop, progress = progress,
                              num.iters = num.iters, 
                              filename = NULL)
