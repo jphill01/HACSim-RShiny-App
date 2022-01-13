@@ -140,8 +140,8 @@ server <- function(input, output) {
           )
           HACSObj <- HACHypothetical(N = N,Hstar = Hstar,probs = probs,perms = perms, p = p, 
                                      conf.level = conf.level,
-                                     subsample = FALSE, prop = NULL,
-                                     progress = TRUE, num.iters = num.iters, filename = NULL)
+                                     subsample = subsample, prop = prop,
+                                     progress = progress, num.iters = num.iters, filename = NULL)
           values[["log"]] <- capture.output(data <- HAC.simrep(HACSObj))
         })
         

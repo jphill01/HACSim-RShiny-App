@@ -132,7 +132,7 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                          tabPanel("Citations",style = "padding-top:5px;",
                                   tags$blockquote(h3("Citations"),
                                                   br(),
-                                                  p("If you intend to use the HACSim R Shiny web app in your research, please cite the HACSim publication below. A publication for the app is currently in preparation."),
+                                                  p("If you intend to use the HACSim R Shiny web app in your research, please cite the HACSim publication below. A publication for the app is currently in preparation for submission to", em("Bioinformatics"), "as an Application Note."),
                                                   tags$ul(
                                                     tags$li(p("Chang, W.,", "Cheng, J., Allaire, J.J., Sievert, C., Schloerke, B., Xie, Y., Allen, J., McPherson, J., Dipert, A. and Borges, B. (2021). shiny: Web Application Framework for R. R package version 1.6.0.
                                                         https://CRAN.R-project.org/package=shiny")),
