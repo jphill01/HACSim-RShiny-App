@@ -46,14 +46,13 @@
             <p class="p1">To successfully run the simulation, follow the steps listed below:</p>
             <ul>
               <li>
-                <p class="p1">Click on the 'RUN SIMULATION' button located at the top right corner of the home page to start HACSim.</p>
+                <p class="p1">Click on the 'RUN SIMULATION' button located at the 
+                top-right corner of the home page to start HACSim.</p>
                 <img src="run_button.png" alt="Start Simulator" class="responsive" style=" display: block; margin-left: auto; margin-right: auto; width: 50%;"></img>
               </li>
               <li>
                 <p class="p1">Enter all the required arguments in the main interface and sub interface.</p>
-                <small class="p1">First, click on the main interface and fill in the desired number of permutations, proportion of haplotypes to recover, as well as the desired confidence level for calculations and plotting. By default, all iterations are run. However, users can choose to run the first iteration only. This is useful when simulations take a long time to finish, or when a user is interested only in assessing genetic diversity present in the current dataset.<small></p>
-                  
-                </small class="p1"> Next, go to the sub interface and toggle either real or hypothetical species simulation type. Users can also choose from several preloaded taxon datasets from a drop-down menu. </small>
+                <small class="p1"> First, click on the main interface and fill in the desired number of permutations, proportion of haplotypes to recover, as well as the desired confidence level for calculations and plotting. By default, all iterations are run. However, users can choose to run the first iteration only. This is useful when simulations take a long time to finish, or when a user is interested only in assessing genetic diversity present in the current dataset. Next, go to the sub interface and toggle either real or hypothetical species simulation type. <small></p>
                 <div class="row">
                 <div class="column" style="float: left;width: 50%;padding: 5px;">
                   <img src="main_interface.png" alt="Main interface" class="responsive" /img>
@@ -64,20 +63,21 @@
               </div>
               </li>
               <li>
+                                <p class="p1">
+                  To simulate real species, follow the instructions in the picture below.
+                </p>
+                </small class="p1"> Users can either upload an aligned and trimmed FASTA file, or choose from several preloaded taxon datasets via a drop-down menu. </small></p>
+                <img src="real.png" alt="Real species" class="responsive" style=" display: block; margin-left: auto; margin-right: auto; width: 50%;"></img>
+              </li>
+              <li>
                 <p class="p1">
-                  To simulate hypothetical species, fill in the required input arguments to complete the steps.
+                  To simulate hypothetical species, fill in the required input arguments depicted in the picture below.
                 </p>
                 <img src="hypothetical.png" alt="Start Simulator" class="responsive" style=" display: block; margin-left: auto; margin-right: auto; width: 50%;"></img>
               </li>
               <li>
-                <p class="p1">
-                  To simulate real species, follow the instructions in the picture below.
-                </p>
-                <img src="real.png" alt="Real species" class="responsive" style=" display: block; margin-left: auto; margin-right: auto; width: 50%;"></img>
-              </li>
-              <li>
-                <p class="p1">Users have the option to input either the proportion of haplotype labels or DNA sequences to subsample, depending on whether hypothetical species or real species are being simulated. To do so, click the appropriate checkbox and enter the desired value in the input field.</p>
-                <p class="p1">Once all steps have been completed, click 'Run'.</p>
+                <p class="p1">For both hypothetical and real species simulations, users have the option to input either the proportion of haplotype labels or DNA sequences to subsample. To do so, click the appropriate checkbox and enter the desired value in the input field.</p>
+                <p class="p1">Once all steps have been completed, click 'Run'. If simulating real species, a popup window will appear again, prompting reselection of the desired FASTA file.</p>
                 <div class="row">
                 <div class="column" style="float: left;width: 50%;padding: 5px;">
                   <img src="subsample.png" alt="subsample DNA sequences" class="responsive" /img>

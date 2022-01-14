@@ -290,6 +290,9 @@ server <- function(input, output) {
     reset("switch")
   })
   observeEvent(input$reset, {
+    reset("fastafile")
+  })
+  observeEvent(input$reset, {
     reset("Id015")
   })
   observeEvent(input$reset, {
