@@ -138,7 +138,7 @@ server <- function(input, output) {
             need((p > 0) && (p <= 1),'p must be greater than 0 and less than or equal to 1'),
             need((conf.level > 0) && (conf.level < 1),'conf.level must be between 0 and 1.')
           )
-          HACSObj <- HACHypothetical(N = N,Hstar = Hstar,probs = probs,perms = perms, p = p, 
+          HACSObj <- HACHypothetical(N = N, Hstar = Hstar, probs = probs, perms = perms, p = p, 
                                      conf.level = conf.level,
                                      subsample = subsample, prop = prop,
                                      progress = progress, num.iters = num.iters, filename = NULL)
