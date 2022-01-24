@@ -32,6 +32,8 @@ server <- function(input, output) {
     # find if simulation type is real or hypothetical
     if(input$switch == TRUE){  # Real
       
+      req(input$fastafile)
+      
       if(input$Id015 == TRUE){ # Preloaded example
         
         values <- reactiveValues()

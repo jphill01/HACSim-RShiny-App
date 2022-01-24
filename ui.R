@@ -252,7 +252,7 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                                                label = "Choose a FASTA file", 
                                                                accept = c(".fas", ".fasta"),
                                                                buttonLabel = "Browse..."
-                                                               ),
+                                                     ),
                                                      checkboxInput(inputId = "subsampleseqs", 
                                                                    label = "Subsample DNA sequences",
                                                                    value = FALSE),
