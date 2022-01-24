@@ -34,7 +34,7 @@ server <- function(input, output) {
       
       fasta <- input$fastafile
       req(fasta)
-      validate(need(ext == c("fas", "fasta"), "Please upload a csv file"))
+      validate(need(ext == c("fas", "fasta"), "Please upload a FASTA file"))
       
       
       if(input$Id015 == TRUE){ # Preloaded example
