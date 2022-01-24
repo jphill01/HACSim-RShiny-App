@@ -33,9 +33,10 @@ server <- function(input, output) {
     if(input$switch == TRUE){  # Real
       
       fasta <- input$fastafile
+      ext <- tools::file_ext(fasta$datapath)
+      
       req(fasta)
       validate(need(ext == c("fas", "fasta"), "Please upload a FASTA file"))
-      
       
       if(input$Id015 == TRUE){ # Preloaded example
         
