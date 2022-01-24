@@ -32,7 +32,10 @@ server <- function(input, output) {
     # find if simulation type is real or hypothetical
     if(input$switch == TRUE){  # Real
       
-      req(input$fastafile)
+      fasta <- input$fastafile
+      req(fasta)
+      validate(need(ext == c("fas", "fasta"), "Please upload a csv file"))
+      
       
       if(input$Id015 == TRUE){ # Preloaded example
         
