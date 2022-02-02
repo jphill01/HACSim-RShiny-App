@@ -188,7 +188,7 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                 step = 0.01), 
                    
                    numericInput(inputId = "conf.level",
-                                label = "Confidence level for calculations and plotting (conf.level)",
+                                label = "Desired confidence level (conf.level)",
                                 value = 0.95,
                                 min = 0.01,
                                 max = 0.99,
@@ -280,13 +280,13 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                                                       numericInput(inputId = "N_load_a",
                                                                                    label = "Number of observed specimens (N)",
                                                                                    value = 235,
-                                                                                   min = 2,
+                                                                                   min = 235,
                                                                                    max = 235),
                                                                       
                                                                       numericInput(inputId = "Hstar_load_a",
                                                                                    label = "Number of observed haplotypes (Hstar)",
                                                                                    value = 15,
-                                                                                   min = 1,
+                                                                                   min = 15,
                                                                                    max = 15),
                                                                       
                                                                       textInput(inputId = "probs_load_a",
@@ -302,13 +302,13 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                                                       numericInput(inputId = "N_load_b",
                                                                                    label = "Number of observed specimens (N)",
                                                                                    value = 356,
-                                                                                   min = 2,
+                                                                                   min = 356,
                                                                                    max = 356),
                                                                       
                                                                       numericInput(inputId = "Hstar_load_b",
                                                                                    label = "Number of observed haplotypes (Hstar)",
                                                                                    value = 12,
-                                                                                   min = 1,
+                                                                                   min = 12,
                                                                                    max = 12),
                                                                       
                                                                       textInput(inputId = "probs_load_b",
@@ -324,13 +324,13 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                                                       numericInput(inputId = "N_load_c",
                                                                                    label = "Number of observed specimens (N)",
                                                                                    value = 217,
-                                                                                   min = 2,
+                                                                                   min = 217,
                                                                                    max = 217),
                                                                       
                                                                       numericInput(inputId = "Hstar_load_c",
                                                                                    label = "Number of observed haplotypes (Hstar)",
                                                                                    value = 25,
-                                                                                   min = 1,
+                                                                                   min = 25,
                                                                                    max = 25),
                                                                       
                                                                       textInput(inputId = "probs_load_c",
@@ -346,13 +346,13 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                                                       numericInput(inputId = "N_load_d",
                                                                                    label = "Number of observed specimens (N)",
                                                                                    value = 349,
-                                                                                   min = 2,
+                                                                                   min = 349,
                                                                                    max = 349),
                                                                       
                                                                       numericInput(inputId = "Hstar_load_d",
                                                                                    label = "Number of observed haplotypes (Hstar)",
                                                                                    value = 83,
-                                                                                   min = 1,
+                                                                                   min = 83,
                                                                                    max = 83),
                                                                       
                                                                       textInput(inputId = "probs_load_d",
@@ -368,13 +368,13 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                                                       numericInput(inputId = "N_load_e",
                                                                                    label = "Number of observed specimens (N)",
                                                                                    value = 365,
-                                                                                   min = 2,
+                                                                                   min = 365,
                                                                                    max = 365),
                                                                       
                                                                       numericInput(inputId = "Hstar_load_e",
                                                                                    label = "Number of observed haplotypes (Hstar)",
                                                                                    value = 58,
-                                                                                   min = 1,
+                                                                                   min = 58,
                                                                                    max = 58),
                                                                       
                                                                       textInput(inputId = "probs_load_e",
@@ -390,13 +390,13 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                                                       numericInput(inputId = "N_load_f",
                                                                                    label = "Number of observed specimens (N)",
                                                                                    value = 171,
-                                                                                   min = 2,
+                                                                                   min = 171,
                                                                                    max = 171),
                                                                       
                                                                       numericInput(inputId = "Hstar_load_f",
                                                                                    label = "Number of observed haplotypes (Hstar)",
                                                                                    value = 12,
-                                                                                   min = 1,
+                                                                                   min = 12,
                                                                                    max = 12),
                                                                       
                                                                       textInput(inputId = "probs_load_f",
@@ -416,17 +416,17 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                    ),
                    conditionalPanel(condition = "input.switch != 1",
                                     numericInput(inputId = "N",
-                                                 label = "Number of observed specimens (N)",
+                                                 label = "Number of sampled specimens/DNA sequences (N)",
                                                  value = 100,
                                                  min = 2),
                                     
                                     numericInput(inputId = "Hstar",
-                                                 label = "Number of observed haplotypes (Hstar)",
+                                                 label = "Number of observed species' haplotypes (Hstar)",
                                                  value = 5,
                                                  min = 1),
                                     
                                     textInput(inputId = "probs",
-                                              label = "Haplotype frequency distribution (probs)",
+                                              label = "Observed haplotype frequency distribution (probs)",
                                               value = "0.20, 0.20, 0.20, 0.20, 0.20")
                                     ,
                                     
