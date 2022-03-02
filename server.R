@@ -36,6 +36,7 @@ server <- function(input, output) {
       ext <- tools::file_ext(fasta$datapath)
       req(fasta)
       validate(need(ext == c("fas", "fasta"), "Please upload a FASTA file"))
+      seqs <- ape::read.dna(file = fasta$datapath, format = "fasta")
       
       if(input$Id015 == TRUE){ # Preloaded example
         
