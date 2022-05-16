@@ -248,11 +248,6 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                       offStatus = "danger"
                                     ),
                                     conditionalPanel(condition = "input.Id015 == 0",
-                                                     fileInput(inputId = "fastafile",
-                                                               label = "Choose a FASTA file", 
-                                                               accept = c(".fas", ".fasta"),
-                                                               buttonLabel = "Browse..."
-                                                     ),
                                                      checkboxInput(inputId = "subsampleseqs", 
                                                                    label = "Subsample DNA sequences",
                                                                    value = FALSE),
