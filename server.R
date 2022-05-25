@@ -27,17 +27,18 @@ server <- function(input, output) {
       num.iters <- as.null(input$num.iters)
     } else {
       num.iters <- input$num.iters
-      }
+    }
+    
+    # fasta <- input$fastafile
+    # ext <- tools::file_ext(fasta$datapath)
+    #   
+    # req(fasta)
+    # validate(need(ext == c("fas", "fasta"), "Please upload a FASTA file"))
+    # seqs <- read.dna(file = fasta$datapath, format = "fasta")
     
     # find if simulation type is real or hypothetical
     if(input$switch == TRUE){  # Real
-      
-      fasta <- input$fastafile
-      ext <- tools::file_ext(fasta$datapath)
-      req(fasta)
-      validate(need(ext == c("fas", "fasta"), "Please upload a FASTA file"))
-      seqs <- ape::read.dna(file = fasta$datapath, format = "fasta")
-      
+   
       if(input$Id015 == TRUE){ # Preloaded example
         
         values <- reactiveValues()
