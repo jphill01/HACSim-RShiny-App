@@ -29,13 +29,6 @@ server <- function(input, output) {
       num.iters <- input$num.iters
     }
     
-    # fasta <- input$fastafile
-    # ext <- tools::file_ext(fasta$datapath)
-    #   
-    # req(fasta)
-    # validate(need(ext == c("fas", "fasta"), "Please upload a FASTA file"))
-    # seqs <- read.dna(file = fasta$datapath, format = "fasta")
-    
     # find if simulation type is real or hypothetical
     if(input$switch == TRUE){  # Real
    
@@ -193,7 +186,7 @@ server <- function(input, output) {
                User must fill in positive numeric value for subsampling between 0 and 1.')
           )
           # creating a HACSObj object by running HACReal()
-          HACSObj <- HACReal(perms = perms, p = p ,conf.level = conf.level,
+          HACSObj <- HACReal(perms = perms, p = p, conf.level = conf.level,
                              subsample = subsample, prop = prop, progress = progress,
                              num.iters = num.iters, 
                              filename = NULL)
