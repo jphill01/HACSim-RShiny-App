@@ -313,7 +313,7 @@ frequency distribution.",style="font-family: 'Times New Roman', Times, serif;fon
                                                      ),
                                                      conditionalPanel(condition = "input.Id008 == 'Common mosquito (Culex pipiens)'",
                                                                       tags$a(
-                                                                        tags$i(" Culex pipens_aligned.fas",class="fas fa-file-download"),href = "Culex pipens_aligned.fas",download = "Culex pipens_aligned.fas"),
+                                                                        tags$i(" Culex pipiens_aligned.fas",class="fas fa-file-download"),href = "Culex pipens_aligned.fas",download = "Culex pipens_aligned.fas"),
                                                                       br(),
                                                                       tags$progress("100%",value = "100",max="100"),
                                                                       tags$text("Upload complete ✓"),
