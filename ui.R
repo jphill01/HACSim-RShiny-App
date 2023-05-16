@@ -30,13 +30,14 @@ tags$body(
       tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
     )
   ),
+  titlePanel(title = "", windowTitle = "HACSim: Haplotype Accumulation Curve Simulator"),
+  titlePanel(
+   title=div(logo, style = "position:absolute; left:15px; top:20px;opacity:100%;")),
   # navigation bar to navigate through page
   useShinyjs(),
   navbarPage(
     position = "fixed-top",
-    title = logo,
     selected = "Home",
-    windowTitle = "HACSim: Haplotype Accumulation Curve Simulator",
     # App UI contents are chilling here!
     tagList(
       tags$head(
