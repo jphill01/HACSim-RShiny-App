@@ -12,4 +12,4 @@ Users can access the app in three ways:
 
 **Note**: Depending on the magnitude of inputted parameters, users may wish to employ the HACSim R package directly through R, especially for long simulation runtimes
 
-A short manuscript outlining the tool is in preparation for submission to *Bioinformatics* as an Application Note. For now, users can follow the Tutorial within the app. 
+A short manuscript outlining the tool is in preparation for submission to *Methods in Ecology and Evolutio* as an Application Note. For now, users can follow the Tutorial within the app. 
