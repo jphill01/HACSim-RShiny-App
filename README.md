@@ -1,4 +1,4 @@
-# HACSim Shiny app (rebuilt)
+# HACSim Shiny app 
 
 A rebuilt version of the HACSim R Shiny web app. Every page, input, button and output from the original is still here. The code is reorganised, the design is new, and "Real" mode now works on a web server.
 
